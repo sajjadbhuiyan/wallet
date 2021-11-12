@@ -1,24 +1,31 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
+    const navStyle = {
+        color: 'white',
+        textDecoration: 'none' ,
+        marginLeft: '20px',
+        fontSize:'20px',
+        fontWeight:'600',
+    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">WALLET GALLERY</Navbar.Brand>
+                <Navbar.Brand>WALLET GALLERY</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Link style= {navStyle} to="/home">Home</Link>
+                        <Link style= {navStyle} to="/products">Products</Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                        Dank memes
-                        </Nav.Link>
+                        <Link style= {navStyle} to="/about">About</Link>
+                        <Link style= {navStyle} to="/memes">Dank memes</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
