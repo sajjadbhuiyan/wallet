@@ -5,7 +5,7 @@ import Footer from "./common/Footer/Footer";
 import Header from "./common/Header";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import ProductGallery from "./pages/ProductGallery/ProductGallery";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             <Home></Home>
           </Route>
           <Route exact path="/products">
-            <Products></Products>
+            <ProductGallery></ProductGallery>
           </Route>
           <Route path="/about">
             <About></About>

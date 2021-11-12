@@ -5,13 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-    const navStyle = {
-        color: 'white',
-        textDecoration: 'none' ,
-        marginLeft: '20px',
-        fontSize:'20px',
-        fontWeight:'600',
-    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -20,12 +13,12 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Link style= {navStyle} to="/home">Home</Link>
-                        <Link style= {navStyle} to="/products">Products</Link>
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/products">Products</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Link style= {navStyle} to="/about">About</Link>
-                        <Link style= {navStyle} to="/memes">Dank memes</Link>
+                        <Nav.Link as={Link} to="/about">About</Nav.Link>
+                        <Nav.Link as={Link} to="/memes">Dank memes</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
