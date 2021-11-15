@@ -8,7 +8,7 @@ const HomeProducts = () => {
     const [products] = useProducts();
     return (
         <Container>
-            <h1 className='heading'>Services</h1>
+            <h1 className='heading'>Tiny Wallet</h1>
             <div className = 'product-container'>
             {
                 products.slice(0,6).map(product => <Products

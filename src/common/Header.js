@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 
 const Header = () => {
+    const {user, logOut} = useAuth()
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -18,7 +20,15 @@ const Header = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
-                        <Nav.Link as={Link} to="/memes">Dank memes</Nav.Link>
+                        {
+                            user?.email ?
+                            // <Nav.Link as={Link} to="/dashboard">Dashbord</Nav.Link>:
+                            <Button onClick={logOut} variant="secondary">Log Out</Button>:
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        
+                        }
+                        <Nav.Link><span>{user?.displayName}</span></Nav.Link>
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>

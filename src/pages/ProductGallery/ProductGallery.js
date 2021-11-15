@@ -7,7 +7,7 @@ const ProductGallery = () => {
     const [products] = useProducts();
     return (
         <Container>
-            <h1 className='heading'>Services</h1>
+            <h1 className='heading'>Wallet Product GALLERY</h1>
             <div className = 'product-container'>
             {
                 products.map(product => <Products
