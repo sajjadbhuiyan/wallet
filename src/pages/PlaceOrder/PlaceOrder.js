@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 import locationImg from '../../images/location.jpg';
 
 const PlaceOrder = () => {
+    const {user} = useAuth();
     return (
         <Container>
             <Row>
@@ -15,6 +17,7 @@ const PlaceOrder = () => {
                     id="floatingPasswordCustom"
                     type="text"
                     placeholder="Your Name"
+                    defaultValue={user.displayName}
                 />
                     <label htmlFor="floatingPasswordCustom">Your Name</label>
             </Form.Floating>
@@ -23,6 +26,7 @@ const PlaceOrder = () => {
                     id="floatingInputCustom"
                     type="email"
                     placeholder="name@example.com"
+                    defaultValue={user.email}
                 />
                     <label htmlFor="floatingInputCustom">Email address</label>
             </Form.Floating>

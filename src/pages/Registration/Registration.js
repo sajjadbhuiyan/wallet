@@ -8,6 +8,8 @@ import registrationImg from '../../images/Secure login.png';
 const Registration = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    console.log(name)
 
     // const auth = getAuth();
     const {user,signInUsingGoogle, handleRegistration, authError} = useAuth();
@@ -21,6 +23,10 @@ const Registration = () => {
         })
     }
 
+    const handleNameChange = e => {
+        setName(e.target.value);
+      }
+
     const handleEmailChange = e => {
         setEmail(e.target.value);
       }
@@ -31,7 +37,7 @@ const Registration = () => {
 
       // user registration
     const handalLoginSubmit = (e) =>{
-        handleRegistration(email,password)
+        handleRegistration(email,password,name)
         e.preventDefault();
     }
 
@@ -42,6 +48,13 @@ const Registration = () => {
                 <Col xs={12} md={6}>
                     <h1 className="p-5">Please Registration</h1>
                 <Form>
+                <FloatingLabel
+                    controlId="floatingInput"
+                    label="Your Name"
+                    className="mb-3"
+                >
+                    <Form.Control onBlur={handleNameChange} type="text" placeholder="name@example.com" />
+                </FloatingLabel>
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
