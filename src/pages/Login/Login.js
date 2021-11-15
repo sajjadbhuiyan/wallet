@@ -35,7 +35,7 @@ const Login = () => {
         // .then(result => {
         //     history.push(redirect_url);
         // })
-        handleLogin(email,password)
+        handleLogin(email,password, location, history)
         e.preventDefault();
         
       }

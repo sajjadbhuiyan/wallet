@@ -49,9 +49,11 @@ const useFirebase = () => {
     //login system
 
 
-    const handleLogin = (email, password) => {
+    const handleLogin = (email, password, location, history) => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            const destination = location?.state?.from || '/home';
+            history.replace(destination);
             setAuthError('');
           })
           .catch((error) => {
