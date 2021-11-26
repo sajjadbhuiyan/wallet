@@ -17,9 +17,9 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/products">Products</Nav.Link>
-                    </Nav>
-                    <Nav>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    </Nav>
+                    <Nav> 
                         {
                             user?.email ?
                             // <Nav.Link as={Link} to="/dashboard">Dashbord</Nav.Link>:
@@ -28,7 +28,7 @@ const Header = () => {
                         
                         }
                         <Nav.Link><span>{user?.displayName}</span></Nav.Link>
-                        
+                        <Nav.Link as={Link} to="/dashboard">DASHBOARD</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

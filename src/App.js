@@ -30,7 +30,7 @@ function App() {
           <Route path="/product/:productId">
             <WalletDetails></WalletDetails>
           </Route>
-          <PrivateRoute exact path="/placeorder">
+          <PrivateRoute exact path="/placeorder/:productId">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute>
           <Route path="/about">
@@ -42,9 +42,9 @@ function App() {
           <Route path="/registration">
             <Registration></Registration>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashbord></Dashbord>
-          </Route>
+          </PrivateRoute>
           <Route path="/">
            <Home></Home>
           </Route>

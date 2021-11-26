@@ -24,7 +24,7 @@ const WalletDetails = () => {
             <h1 className='pt-2'>{serviceTitle}</h1>
             <h6 className='pt-3'>{serviceDescription}</h6>
             <p className='pt-4 pb-5'>{moreDetails}</p>
-            <Link to='/placeorder' className='btn btn-info'>Place Order</Link>      
+            <Link to={`/placeorder/${productId}`} className='btn btn-info'>Place Order</Link>      
         </div>
         </div>
         </Container>
